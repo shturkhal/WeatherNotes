@@ -1,10 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Dark theme" : {
+
+    },
     "Enter note text" : {
 
     },
     "Error" : {
+
+    },
+    "Manage your app preferences." : {
 
     },
     "New Note" : {
@@ -29,9 +35,6 @@
 
     },
     "Settings" : {
-
-    },
-    "Settings will be added later." : {
 
     },
     "Start" : {

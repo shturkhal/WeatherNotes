@@ -9,29 +9,32 @@ struct AddNoteScreen: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
-                TextField("Enter note text", text: $viewModel.noteText, axis: .vertical)
-                    .font(.system(size: 16, weight: .medium, design: .rounded))
-                    .padding()
-                    .frame(minHeight: 120, alignment: .topLeading)
-                    .background(Color(.secondarySystemGroupedBackground))
-                    .clipShape(RoundedRectangle(cornerRadius: 18))
-                
-                Button {
-                    viewModel.saveNote(context: context)
-                } label: {
-                    Text("Save")
-                        .font(.system(size: 17, weight: .bold, design: .rounded))
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 54)
-                        .background(Color.blue)
-                        .clipShape(Capsule())
+            ZStack {
+                Color.appBackground
+                    .ignoresSafeArea()
+                VStack(spacing: 20) {
+                    TextField("Enter note text", text: $viewModel.noteText, axis: .vertical)
+                        .font(.system(size: 16, weight: .medium, design: .rounded))
+                        .foregroundStyle(Color.appPrimaryText)
+                        .padding()
+                        .frame(minHeight: 120, alignment: .topLeading)
+                        .background(Color.appCardBackground)
+                        .clipShape(RoundedRectangle(cornerRadius: 18))
+                    Button {
+                        viewModel.saveNote(context: context)
+                    } label: {
+                        Text("Save")
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 54)
+                            .background(Color.appAccent)
+                            .clipShape(Capsule())
+                    }
+                    Spacer()
                 }
-                
-                Spacer()
+                .padding(20)
             }
-            .padding(20)
             .navigationTitle("New Note")
             .navigationBarTitleDisplayMode(.inline)
         }

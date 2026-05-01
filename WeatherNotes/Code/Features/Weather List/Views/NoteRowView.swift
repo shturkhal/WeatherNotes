@@ -10,16 +10,15 @@ struct NoteRowView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(note.text)
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
-                .foregroundStyle(.primary)
+                .foregroundStyle(Color.appPrimaryText)
                 .lineLimit(2)
-            
             Text(note.createdAt.formatted(date: .abbreviated, time: .shortened))
                 .font(.system(size: 14, weight: .medium, design: .rounded))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.appSecondaryText)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.secondarySystemGroupedBackground))
+        .background(Color.appCardBackground)
         .clipShape(RoundedRectangle(cornerRadius: 18))
         .padding(.horizontal, 16)
         .padding(.vertical, 6)

@@ -10,18 +10,19 @@ struct NotesListScreen: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(.systemGroupedBackground)
+                Color.appBackground
                     .ignoresSafeArea()
                 if viewModel.notes.isEmpty {
                     VStack(spacing: 12) {
                         Image(systemName: "note.text")
                             .font(.system(size: 52, weight: .semibold))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.appSecondaryText)
                         Text("No notes yet")
                             .font(.system(size: 22, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.appPrimaryText)
                         Text("Tap plus button to create your first weather note.")
                             .font(.system(size: 15, weight: .medium, design: .rounded))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.appSecondaryText)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 32)
                     }
@@ -45,6 +46,7 @@ struct NotesListScreen: View {
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 18, weight: .bold))
+                            .foregroundStyle(Color.appAccent)
                     }
                 }
             }

@@ -12,9 +12,15 @@ struct NoteRowView: View {
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                 .foregroundStyle(Color.appPrimaryText)
                 .lineLimit(2)
-            Text(note.createdAt.formatted(date: .abbreviated, time: .shortened))
-                .font(.system(size: 14, weight: .medium, design: .rounded))
-                .foregroundStyle(Color.appSecondaryText)
+            
+            HStack(spacing: 8) {
+                Text(note.createdAt.formatted(date: .abbreviated, time: .shortened))
+                Text("•")
+                Text("\(Int(note.temperature.rounded()))°C")
+                Text(note.weatherDescription.capitalized)
+            }
+            .font(.system(size: 14, weight: .medium, design: .rounded))
+            .foregroundStyle(Color.appSecondaryText)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -23,16 +29,4 @@ struct NoteRowView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 6)
     }
-}
-
-#Preview {
-    NoteRowView(
-        note: NoteModel(
-            id: UUID(),
-            text: "Walked in the park after work",
-            createdAt: Date()
-        )
-    )
-    .padding()
-    .background(Color(.systemGroupedBackground))
 }

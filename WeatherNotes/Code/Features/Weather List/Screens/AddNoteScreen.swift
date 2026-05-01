@@ -20,17 +20,25 @@ struct AddNoteScreen: View {
                         .frame(minHeight: 120, alignment: .topLeading)
                         .background(Color.appCardBackground)
                         .clipShape(RoundedRectangle(cornerRadius: 18))
+                        .disabled(viewModel.isSaving)
                     Button {
                         viewModel.saveNote(context: context)
                     } label: {
-                        Text("Save")
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 54)
-                            .background(Color.appAccent)
-                            .clipShape(Capsule())
+                        HStack(spacing: 10) {
+                            if viewModel.isSaving {
+                                ProgressView()
+                                    .tint(.white)
+                            }
+                            Text(viewModel.isSaving ? "Saving..." : "Save")
+                                .font(.system(size: 17, weight: .bold, design: .rounded))
+                        }
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 54)
+                        .background(Color.appAccent)
+                        .clipShape(Capsule())
                     }
+                    .disabled(viewModel.isSaving)
                     Spacer()
                 }
                 .padding(20)

@@ -2,7 +2,8 @@
 
 import SwiftUI
 
-struct MainTabView: View {
+struct MainTabScreen: View {
+    
     var body: some View {
         TabView {
             NotesListScreen()
@@ -21,6 +22,6 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabScreen()
         .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 }

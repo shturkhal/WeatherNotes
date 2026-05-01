@@ -12,7 +12,7 @@ struct RootView: View {
                     .transition(.opacity)
             } else {
                 if appState.hasSeenOnboarding {
-                    MainTabView()
+                    MainTabScreen()
                         .transition(.opacity)
                 } else {
                     OnboardingScreen()

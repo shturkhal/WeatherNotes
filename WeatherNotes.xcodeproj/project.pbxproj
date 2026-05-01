@@ -8,16 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		9B29E1412FA4EB90000D733C /* WeatherNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B29E13F2FA4EB90000D733C /* WeatherNotes.xcdatamodeld */; };
+		9B29E1832FA506CF000D733C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9B29E1822FA506CA000D733C /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B29E04C2FA4DCE1000D733C /* WeatherNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B29E1402FA4EB90000D733C /* WeatherNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherNotes.xcdatamodel; sourceTree = "<group>"; };
+		9B29E1822FA506CA000D733C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9B29E1812FA503D9000D733C /* Exceptions for "WeatherNotes" folder in "WeatherNotes" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9B29E04B2FA4DCE1000D733C /* WeatherNotes */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9B29E04E2FA4DCE1000D733C /* WeatherNotes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9B29E1812FA503D9000D733C /* Exceptions for "WeatherNotes" folder in "WeatherNotes" target */,
+			);
 			path = WeatherNotes;
 			sourceTree = "<group>";
 		};
@@ -37,6 +52,7 @@
 		9B29E0432FA4DCE1000D733C = {
 			isa = PBXGroup;
 			children = (
+				9B29E1822FA506CA000D733C /* Config.xcconfig */,
 				9B29E13F2FA4EB90000D733C /* WeatherNotes.xcdatamodeld */,
 				9B29E04E2FA4DCE1000D733C /* WeatherNotes */,
 				9B29E04D2FA4DCE1000D733C /* Products */,
@@ -115,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B29E1832FA506CF000D733C /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +151,7 @@
 /* Begin XCBuildConfiguration section */
 		9B29E0562FA4DCE2000D733C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B29E1822FA506CA000D733C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -196,6 +214,7 @@
 		};
 		9B29E0572FA4DCE2000D733C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B29E1822FA506CA000D733C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -250,15 +269,19 @@
 		};
 		9B29E0592FA4DCE2000D733C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B29E1822FA506CA000D733C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WeatherNotes/WeatherNotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKPT735J88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherNotes/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Weather Notes";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to save weather information with your notes.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -289,15 +312,19 @@
 		};
 		9B29E05A2FA4DCE2000D733C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B29E1822FA506CA000D733C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WeatherNotes/WeatherNotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKPT735J88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherNotes/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Weather Notes";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to save weather information with your notes.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

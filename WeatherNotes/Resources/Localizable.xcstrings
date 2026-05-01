@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%lld°C" : {
+
+    },
+    "•" : {
+
+    },
     "Dark theme" : {
 
     },
@@ -32,6 +38,9 @@
 
     },
     "Save moments with the weather" : {
+
+    },
+    "Saving..." : {
 
     },
     "Settings" : {

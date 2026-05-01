@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  WeatherNotes
-//
-//  Created by Ivan Shturkhal on 01.05.2026.
-//
+//  Copyright (c) 2026
 
 import SwiftUI
 

@@ -4,9 +4,12 @@ import SwiftUI
 
 @main
 struct WeatherNotesApp: App {
+    @StateObject private var appState = AppStateManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(appState)
         }
     }
 }

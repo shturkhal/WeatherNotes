@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct NoteModel: Identifiable {
+struct NoteModel: Identifiable, Hashable {
     let id: UUID
     let text: String
     let createdAt: Date

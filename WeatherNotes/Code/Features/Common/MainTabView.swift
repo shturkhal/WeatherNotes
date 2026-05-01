@@ -4,11 +4,23 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        Text("Main Screen")
-            .font(.title)
+        TabView {
+            NotesListScreen()
+                .tabItem {
+                    Image(systemName: "note.text")
+                    Text("Notes")
+                }
+            
+            SettingsScreen()
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                    Text("Settings")
+                }
+        }
     }
 }
 
 #Preview {
     MainTabView()
+        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 }

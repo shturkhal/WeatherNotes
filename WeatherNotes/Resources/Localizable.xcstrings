@@ -1,16 +1,43 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Main Screen" : {
+    "Enter note text" : {
+
+    },
+    "Error" : {
+
+    },
+    "New Note" : {
 
     },
     "Next" : {
 
     },
+    "No notes yet" : {
+
+    },
+    "Notes" : {
+
+    },
+    "OK" : {
+
+    },
+    "Save" : {
+
+    },
     "Save moments with the weather" : {
 
     },
+    "Settings" : {
+
+    },
+    "Settings will be added later." : {
+
+    },
     "Start" : {
+
+    },
+    "Tap plus button to create your first weather note." : {
 
     },
     "WeatherNotes" : {

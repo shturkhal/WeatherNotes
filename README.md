@@ -31,7 +31,7 @@ Built with **SwiftUI + MVVM**, using clean architecture and a minimal, iOS-style
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9075c28f-f8d6-4c47-8f16-3df7c898dee0" width="180">
-</p> -->
+</p>
 
 
 ---

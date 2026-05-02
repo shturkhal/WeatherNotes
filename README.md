@@ -34,9 +34,9 @@ Built with **SwiftUI + MVVM**, using clean architecture and a minimal, iOS-style
 </p>
 
 
----
-
 ## 📸 Screenshots
+
+### ☀️ Light Mode
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1d442c3d-e3c5-4f0d-8138-82291e9b511f" width="180">
@@ -45,6 +45,19 @@ Built with **SwiftUI + MVVM**, using clean architecture and a minimal, iOS-style
   <img src="https://github.com/user-attachments/assets/62c9a05b-a8ad-46b1-9958-4f20ed6f1838" width="180">
   <img src="https://github.com/user-attachments/assets/7ce8e716-9e51-484b-bbba-7bbab793542c" width="180">
 </p>
+
+---
+
+### 🌙 Dark Mode
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f1382b28-b3dc-4f12-8684-39bae456560b" width="180">
+  <img src="https://github.com/user-attachments/assets/7ed57a60-8b34-4e26-8110-948d15b8e768" width="180">
+  <img src="https://github.com/user-attachments/assets/5b24715c-2bfb-4bb9-abe1-3018258c7a0f" width="180">
+  <img src="https://github.com/user-attachments/assets/e6c2a61c-e4d7-4485-9157-0da1126abcfc" width="180">
+  <img src="https://github.com/user-attachments/assets/65ad540b-4477-4a62-9e0a-9e41edc820b4" width="180">
+</p>
+
 
 ---
 

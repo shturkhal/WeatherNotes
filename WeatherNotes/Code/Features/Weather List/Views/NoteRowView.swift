@@ -27,7 +27,7 @@ struct NoteRowView: View {
                 weatherIconView
                 VStack(alignment: .leading, spacing: 8) {
                     Text(note.text)
-                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .font(.SerifDisplayRegular(size: 16))
                         .foregroundStyle(Color.appPrimaryText)
                         .lineLimit(2)
                         .fixedSize(horizontal: false, vertical: true)

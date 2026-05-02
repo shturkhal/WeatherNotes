@@ -14,14 +14,17 @@ struct NotesListScreen: View {
             ZStack {
                 Color.appBackground
                     .ignoresSafeArea()
-                if viewModel.notes.isEmpty {
-                    emptyStateView
-                } else {
-                    notesList
+                VStack(spacing: 0) {
+                    headerView
+                    if viewModel.notes.isEmpty {
+                        emptyStateContainer
+                    } else {
+                        notesList
+                    }
                 }
                 addFloatingButton
             }
-            .navigationTitle("Notes")
+            .navigationBarHidden(true)
             .sheet(isPresented: $viewModel.isShowingAddNote) {
                 AddNoteScreen(viewModel: viewModel)
                     .presentationDetents([.height(320)])
@@ -48,6 +51,19 @@ struct NotesListScreen: View {
         }
     }
     
+    private var headerView: some View {
+        HStack {
+            Text("Notes")
+                .font(.custom("DMSerifDisplay-Regular", size: 34))
+                .foregroundStyle(Color.appPrimaryText)
+            
+            Spacer()
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 16)
+        .padding(.bottom, 8)
+    }
+    
     private var notesList: some View {
         List {
             ForEach(viewModel.notes) { note in
@@ -63,6 +79,33 @@ struct NotesListScreen: View {
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
+    }
+    
+    private var emptyStateContainer: some View {
+        VStack {
+            Spacer()
+            emptyStateView
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private var emptyStateView: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "note.text")
+                .font(.system(size: 52, weight: .semibold))
+                .foregroundStyle(Color.appSecondaryText)
+            
+            Text("No notes yet")
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundStyle(Color.appPrimaryText)
+            
+            Text("Tap plus button to create your first weather note.")
+                .font(.system(size: 15, weight: .medium, design: .rounded))
+                .foregroundStyle(Color.appSecondaryText)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 32)
+        }
     }
     
     private var addFloatingButton: some View {
@@ -102,25 +145,4 @@ struct NotesListScreen: View {
             }
         }
     }
-    
-    private var emptyStateView: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "note.text")
-                .font(.system(size: 52, weight: .semibold))
-                .foregroundStyle(Color.appSecondaryText)
-            Text("No notes yet")
-                .font(.system(size: 22, weight: .bold, design: .rounded))
-                .foregroundStyle(Color.appPrimaryText)
-            Text("Tap plus button to create your first weather note.")
-                .font(.system(size: 15, weight: .medium, design: .rounded))
-                .foregroundStyle(Color.appSecondaryText)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 32)
-        }
-    }
-}
-
-#Preview {
-    NotesListScreen()
-        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 }

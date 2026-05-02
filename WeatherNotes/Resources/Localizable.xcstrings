@@ -7,16 +7,13 @@
     "%lld°C" : {
 
     },
-    "Dark theme" : {
+    "Dark Mode" : {
 
     },
     "Enter note text" : {
 
     },
     "Error" : {
-
-    },
-    "Manage your app preferences." : {
 
     },
     "New Note" : {
@@ -52,7 +49,7 @@
     "Tap plus button to create your first weather note." : {
 
     },
-    "WeatherNotes" : {
+    "Weather Notes" : {
 
     }
   },

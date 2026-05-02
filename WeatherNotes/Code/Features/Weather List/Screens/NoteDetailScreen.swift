@@ -39,14 +39,13 @@ struct NoteDetailScreen: View {
     }
     
     private var noteCard: some View {
-        
         VStack(alignment: .leading, spacing: 18) {
             sectionHeader(
                 icon: "note.text",
                 title: "Note"
             )
             Text(note.text)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .font(.SerifDisplayRegular(size: 22))
                 .foregroundStyle(Color.appPrimaryText)
                 .fixedSize(horizontal: false, vertical: true)
             detailRow(
@@ -127,7 +126,7 @@ struct NoteDetailScreen: View {
     private var temperatureView: some View {
         VStack(spacing: 4) {
             Text("\(Int(note.temperature.rounded()))°C")
-                .font(.system(size: 46, weight: .bold, design: .rounded))
+                .font(.robotoBold(size: 46))
                 .foregroundStyle(Color.appPrimaryText)
             Text(note.weatherDescription.capitalized)
                 .font(.system(size: 16, weight: .semibold, design: .rounded))
@@ -138,7 +137,7 @@ struct NoteDetailScreen: View {
     private func sectionHeader(icon: String, title: String) -> some View {
         HStack(spacing: 10) {
             Image(systemName: icon)
-                .font(.system(size: 15, weight: .bold))
+                .font(.robotoBold(size: 15))
                 .foregroundStyle(.white)
                 .frame(width: 30, height: 30)
                 .background(

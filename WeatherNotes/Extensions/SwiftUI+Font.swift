@@ -4,8 +4,10 @@ import SwiftUI
 
 extension Font {
     
-    static func interMedium(size: CGFloat) -> Font {
-        return Font.custom("Inter18pt-Medium", size: size)
+    static func SerifDisplayRegular(size: CGFloat) -> Font {
+        return Font.custom("DMSerifDisplay-Regular", size: size)
     }
-    // get my font
+    static func robotoBold(size: CGFloat) -> Font {
+        return Font.custom("Roboto-Bold", size: size)
+    }
 }

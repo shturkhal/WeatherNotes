@@ -78,7 +78,18 @@ final class NotesListViewModel: ObservableObject {
                 loadNotes(context: context)
             } catch {
                 isSaving = false
-                errorMessage = error.localizedDescription
+                if let urlError = error as? URLError {
+                    switch urlError.code {
+                    case .notConnectedToInternet:
+                        errorMessage = "No internet connection. Please check your network and try again."
+                    case .timedOut:
+                        errorMessage = "The request took too long. Please try again."
+                    default:
+                        errorMessage = "Network error. Please try again later."
+                    }
+                } else {
+                    errorMessage = "Failed to save note. Please try again."
+                }
                 print("Save note error:", error.localizedDescription)
             }
         }

@@ -12,39 +12,53 @@ struct AddNoteScreen: View {
             ZStack {
                 Color.appBackground
                     .ignoresSafeArea()
-                VStack(spacing: 20) {
-                    TextField("Enter note text", text: $viewModel.noteText, axis: .vertical)
-                        .font(.system(size: 16, weight: .medium, design: .rounded))
-                        .foregroundStyle(Color.appPrimaryText)
-                        .padding()
-                        .frame(minHeight: 120, alignment: .topLeading)
-                        .background(Color.appCardBackground)
-                        .clipShape(RoundedRectangle(cornerRadius: 18))
-                        .disabled(viewModel.isSaving)
-                    Button {
-                        viewModel.saveNote(context: context)
-                    } label: {
-                        HStack(spacing: 10) {
-                            if viewModel.isSaving {
-                                ProgressView()
-                                    .tint(.white)
+                VStack(spacing: 0) {
+                    headerView
+                    VStack(spacing: 20) {
+                        TextField("Enter note text", text: $viewModel.noteText, axis: .vertical)
+                            .font(.system(size: 16, weight: .medium, design: .rounded))
+                            .foregroundStyle(Color.appPrimaryText)
+                            .padding()
+                            .frame(minHeight: 120, alignment: .topLeading)
+                            .background(Color.appCardBackground)
+                            .clipShape(RoundedRectangle(cornerRadius: 18))
+                            .disabled(viewModel.isSaving)
+                        Button {
+                            viewModel.saveNote(context: context)
+                        } label: {
+                            HStack(spacing: 10) {
+                                if viewModel.isSaving {
+                                    ProgressView()
+                                        .tint(.white)
+                                }
+                                Text(viewModel.isSaving ? "Saving..." : "Save")
+                                    .font(.system(size: 17, weight: .bold, design: .rounded))
                             }
-                            Text(viewModel.isSaving ? "Saving..." : "Save")
-                                .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 54)
+                            .background(Color.appAccent)
+                            .clipShape(Capsule())
                         }
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 54)
-                        .background(Color.appAccent)
-                        .clipShape(Capsule())
+                        .disabled(viewModel.isSaving)
+                        Spacer()
                     }
-                    .disabled(viewModel.isSaving)
-                    Spacer()
+                    .padding(20)
                 }
-                .padding(20)
             }
-            .navigationTitle("New Note")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
+    }
+    
+    private var headerView: some View {
+        HStack {
+            Text("New Note")
+                .font(.custom("DMSerifDisplay-Regular", size: 32))
+                .foregroundStyle(Color.appPrimaryText)
+            Spacer()
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 16)
+        .padding(.bottom, 8)
     }
 }

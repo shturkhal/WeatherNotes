@@ -11,46 +11,42 @@ struct SettingsScreen: View {
             ZStack {
                 Color.appBackground
                     .ignoresSafeArea()
-                VStack(spacing: 20) {
-                    settingsHeader
-                    VStack(spacing: 0) {
+                
+                VStack(spacing: 0) {
+                    headerView
+                    VStack(spacing: 12) {
                         Toggle(isOn: $themeManager.isDarkThemeEnabled) {
-                            HStack(spacing: 12) {
-                                Image(systemName: "moon.fill")
-                                    .font(.system(size: 18, weight: .semibold))
-                                    .foregroundStyle(Color.appAccent)
-                                Text("Dark theme")
-                                    .font(.system(size: 17, weight: .semibold, design: .rounded))
-                                    .foregroundStyle(Color.appPrimaryText)
-                            }
+                            Text("Dark Mode")
+                                .font(.system(size: 17, weight: .semibold))
+                                .foregroundStyle(Color.appPrimaryText)
                         }
                         .tint(Color.appAccent)
                         .padding(16)
+                        .background(Color.appCardBackground)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
                     }
-                    .background(Color.appCardBackground)
-                    .clipShape(RoundedRectangle(cornerRadius: 18))
                     .padding(.horizontal, 16)
+                    .padding(.top, 8)
                     
                     Spacer()
                 }
-                .padding(.top, 24)
             }
-            .navigationTitle("Settings")
+            .navigationBarHidden(true)
         }
     }
     
-    private var settingsHeader: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "gearshape.fill")
-                .font(.system(size: 52, weight: .semibold))
-                .foregroundStyle(Color.appSecondaryText)
+    private var headerView: some View {
+        HStack {
             Text("Settings")
-                .font(.system(size: 24, weight: .bold, design: .rounded))
+                .font(.custom("DMSerifDisplay-Regular", size: 34))
+                .fontWeight(.bold)
                 .foregroundStyle(Color.appPrimaryText)
-            Text("Manage your app preferences.")
-                .font(.system(size: 15, weight: .medium, design: .rounded))
-                .foregroundStyle(Color.appSecondaryText)
+            
+            Spacer()
         }
+        .padding(.horizontal, 20)
+        .padding(.top, 16)
+        .padding(.bottom, 8)
     }
 }
 

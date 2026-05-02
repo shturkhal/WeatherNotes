@@ -32,8 +32,8 @@ struct SplashScreen: View {
                 }
                 
                 VStack(spacing: 8) {
-                    Text("WeatherNotes")
-                        .font(.system(size: 38, weight: .bold, design: .rounded))
+                    Text("Weather Notes")
+                        .font(.SerifDisplayRegular(size: 38))
                         .foregroundStyle(.white)
                     
                     Text("Save moments with the weather")

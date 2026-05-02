@@ -53,4 +53,4 @@ Built with **SwiftUI + MVVM**, using clean architecture and a minimal, iOS-style
 ### 1. Clone the project
 
 ```bash
-git clone https://github.com/shturkhal/weather-notes.git
+git clone https://github.com/shturkhal/WeatherNotes.git
